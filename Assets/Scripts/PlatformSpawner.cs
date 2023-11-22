@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class PlatformSpawner : MonoBehaviour
 {
-    [SerializeField] float spawnRate;
+    [SerializeField] float spawnRate = 1;
 
-    void Update()
-    {
-        float timer = 0;
-        if(timer >= spawnRate)
-        {
-            
+    public void Start() {
+        StartCoroutine("Timer");
+    }
+    IEnumerator Timer() {
+        for(;;) {
+            Debug.Log("es");
+            //yield return new WaitForSeconds(spawnRate);
         }
     }
 }
+
