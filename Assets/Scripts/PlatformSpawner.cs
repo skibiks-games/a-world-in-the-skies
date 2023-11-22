@@ -4,16 +4,25 @@ using UnityEngine;
 
 public class PlatformSpawner : MonoBehaviour
 {
-    [SerializeField] float spawnRate = 1;
-
-    public void Start() {
-        StartCoroutine("Timer");
+    [SerializeField] float spawnRate = 5;
+    [SerializeField] float y;
+    [SerializeField] float startX = 0;
+    [SerializeField] float endX = 10;
+    [SerializeField] GameObject prefab;
+    
+    public void Start()
+    {
+        StartCoroutine(Timer());
     }
-    IEnumerator Timer() {
-        for(;;) {
-            Debug.Log("es");
-            //yield return new WaitForSeconds(spawnRate);
+    IEnumerator Timer()
+    {
+        while(true)
+        {
+            Instantiate(prefab, new Vector3(Random.Range(startX,endX), 0, 0), Quaternion.identity);
+            yield return new WaitForSeconds(spawnRate);
         }
+        
+        
     }
 }
 
