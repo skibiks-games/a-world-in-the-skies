@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D _rb;
 
     private void Start() {
+        Application.targetFrameRate = 60;
+
         _rb = GetComponent<Rigidbody2D>();
     }
 
@@ -17,13 +19,19 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space)) {
             Jump();
         }
+    }
 
-        float sideMovement = Input.GetAxis("Horizontal") * sideSpeed * Time.deltaTime;
+    private void FixedUpdate() {
+        float sideMovement = Input.GetAxis("Horizontal") * sideSpeed * Time.fixedDeltaTime;
         transform.position += Vector3.right * sideMovement;
     }
 
     private void Jump() {
         _rb.velocity = Vector2.zero;
         _rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        Debug.Log("collision");
     }
 }
