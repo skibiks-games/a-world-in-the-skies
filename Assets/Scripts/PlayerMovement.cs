@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float sideSpeed;
     [SerializeField] private float jumpForce;
+
+    [SerializeField] private LayerMask platformsLayer;
 
     private Rigidbody2D _rb;
 
@@ -38,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
-
+        if (collision.gameObject.layer == Mathf.Log(platformsLayer.value, 2))
+            Jump();
     }
 }
