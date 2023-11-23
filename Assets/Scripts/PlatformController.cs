@@ -18,4 +18,5 @@ public class PlatformController : MonoBehaviour
         if (transform.position.y < -10f)
             Destroy(gameObject);
     }
+    
 }
