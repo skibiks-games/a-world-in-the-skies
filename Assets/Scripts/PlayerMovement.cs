@@ -32,10 +32,6 @@ public class PlayerMovement : MonoBehaviour
         if (transform.position.y < -5.5f) {
             GameOver();
         }
-
-        if (Input.GetKeyDown(KeyCode.Space)) {
-            Jump();
-        }
     }
 
     private void FixedUpdate() {
@@ -58,7 +54,6 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void GameOver() {
-        Debug.Log("game over");
         Time.timeScale = 0f;
         gameOverPanel.SetActive(true);
         _scoreCounter.SetGameOverUI();
