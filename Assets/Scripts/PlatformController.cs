@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlatformController : MonoBehaviour
 {
-    [SerializeField] float speed = 2;
     [SerializeField] private GameObject coinPrefab;
 
     private static PlayerMovement PlayerMovement => PlayerMovement.Instance;
@@ -27,7 +26,5 @@ public class PlatformController : MonoBehaviour
 
     private void Update() {
         _collider.enabled = _playerTF.position.y > transform.position.y + _minDistanceToJump;
-
-        transform.Translate(Vector2.down * Time.deltaTime * speed);
     }
 }
