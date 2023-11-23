@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7919667984612560108}
   - component: {fileID: 7006675209489927372}
   - component: {fileID: 5325920919638386662}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlatformPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 436842018266193979}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.32, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
