@@ -5,10 +5,10 @@ using UnityEngine;
 public class PlatformSpawner : MonoBehaviour
 {
     [SerializeField] float spawnRate = 5;
-    [SerializeField] float y;
-    
-    [SerializeField] float startX = 0;
-    [SerializeField] float endX = 10;
+    [SerializeField] float y = 5;
+
+    [SerializeField] float startX = 3;
+    [SerializeField] float endX = -3;
     [SerializeField] GameObject prefab;
     
     public void Start()
@@ -19,7 +19,7 @@ public class PlatformSpawner : MonoBehaviour
     {
         while(true)
         {
-            Instantiate(prefab, new Vector3(Random.Range(startX,endX), 0, 0), Quaternion.identity);
+            Instantiate(prefab, new Vector3(Random.Range(startX,endX), y, 0), Quaternion.identity);
             yield return new WaitForSeconds(spawnRate);
         }
         
