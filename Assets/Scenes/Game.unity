@@ -514,7 +514,7 @@ GameObject:
   - component: {fileID: 684989421}
   - component: {fileID: 684989420}
   m_Layer: 5
-  m_Name: TRyAgainButton
+  m_Name: TryAgainButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
