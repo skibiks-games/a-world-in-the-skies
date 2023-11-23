@@ -6,6 +6,7 @@ public class PlatformSpawner : MonoBehaviour
 {
     [SerializeField] float spawnRate = 5;
     [SerializeField] float y;
+    
     [SerializeField] float startX = 0;
     [SerializeField] float endX = 10;
     [SerializeField] GameObject prefab;
