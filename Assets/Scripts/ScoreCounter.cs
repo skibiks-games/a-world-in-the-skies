@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class ScoreCounter : MonoBehaviour
@@ -7,6 +8,8 @@ public class ScoreCounter : MonoBehaviour
 
     private static string maxScorePPId = "MaxScore";
 
+    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI bestScoreText;
     [SerializeField] private LayerMask coinsLayer;
 
     private void Start() {
