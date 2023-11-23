@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public static PlayerMovement Instance { get; private set; }
+
     [SerializeField] private float sideSpeed;
     [SerializeField] private float jumpForce;
 
     private Rigidbody2D _rb;
+
+    private void Awake() {
+        Instance = this;
+    }
 
     private void Start() {
         Application.targetFrameRate = 60;
