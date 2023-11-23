@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  coinChance: 0.3
+  coinPrefab: {fileID: 5925805698312592468, guid: ed778312652c6f24d97190bc9753dffd, type: 3}
 --- !u!1 &942078225852850900
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,7 +60,7 @@ GameObject:
   - component: {fileID: 4382924654882460626}
   - component: {fileID: 7017628913671503594}
   m_Layer: 0
-  m_Name: Platform
+  m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -143,7 +145,7 @@ GameObject:
   - component: {fileID: 5388428743364747913}
   - component: {fileID: 821806381033502697}
   m_Layer: 6
-  m_Name: PlatformPrefab
+  m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -221,4 +223,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea0dbc0f5b3f77344ac20f5d6fbc43ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinPrefab: {fileID: 5925805698312592468, guid: ed778312652c6f24d97190bc9753dffd, type: 3}
