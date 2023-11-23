@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3460485219802573041}
   - component: {fileID: 6211946009888188350}
+  - component: {fileID: 8571239955684891301}
   m_Layer: 6
   m_Name: PlatformPrefab
   m_TagString: Untagged
@@ -46,9 +47,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f3e27442679e014f82d76c4f89ae7a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
   coinChance: 0.3
   coinPrefab: {fileID: 5925805698312592468, guid: ed778312652c6f24d97190bc9753dffd, type: 3}
+--- !u!114 &8571239955684891301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436842018266193979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26e57336b420fc04e985b30ec7ebc440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
 --- !u!1 &942078225852850900
 GameObject:
   m_ObjectHideFlags: 0
