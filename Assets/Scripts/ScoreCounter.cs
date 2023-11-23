@@ -10,9 +10,13 @@ public class ScoreCounter : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI bestScoreText;
+    [SerializeField] private TextMeshProUGUI gOScoreText;
+    [SerializeField] private TextMeshProUGUI gOBestScoreText;
     [SerializeField] private LayerMask coinsLayer;
 
     private void Start() {
+        Time.timeScale = 1f;
+
         score = 0;
 
         if (PlayerPrefs.HasKey(bestScorePPId))
@@ -27,6 +31,12 @@ public class ScoreCounter : MonoBehaviour
     private void UpdateUI() {
         scoreText.text = $"score: {score}";
         bestScoreText.text = $"best score: {bestScore}";
+    }
+    public void SetGameOverUI() {
+        scoreText.text = "";
+        bestScoreText.text = "";
+        gOScoreText.text = $"score: {score}";
+        gOBestScoreText.text = $"best score: {bestScore}";
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {

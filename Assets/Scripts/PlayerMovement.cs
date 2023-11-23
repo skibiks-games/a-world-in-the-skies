@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,20 +10,29 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce;
 
     [SerializeField] private LayerMask platformsLayer;
+    [SerializeField] private GameObject gameOverPanel;
 
+    private ScoreCounter _scoreCounter;
     private Rigidbody2D _rb;
     private AudioSource _audioSource;
+
     private void Awake() {
         Instance = this;
     }
 
     private void Start() {
         Application.targetFrameRate = 60;
-        _audioSource = GetComponent<AudioSource>();
+
+        _scoreCounter = GetComponent<ScoreCounter>();
         _rb = GetComponent<Rigidbody2D>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Update() {
+        if (transform.position.y < -5.5f) {
+            GameOver();
+        }
+
         if (Input.GetKeyDown(KeyCode.Space)) {
             Jump();
         }
@@ -45,5 +55,16 @@ public class PlayerMovement : MonoBehaviour
             if (_rb.velocity.y <= 0.1f)
                 Jump();
         }
+    }
+
+    private void GameOver() {
+        Debug.Log("game over");
+        Time.timeScale = 0f;
+        gameOverPanel.SetActive(true);
+        _scoreCounter.SetGameOverUI();
+    }
+
+    public void RestartGame() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
