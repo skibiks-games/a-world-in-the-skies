@@ -831,7 +831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRate: 1
-  y: 6
+  y: 5
   startX: 4
   endX: -4
   prefab: {fileID: 436842018266193979, guid: d0e8301c68402c442af1f37100b2df57, type: 3}
@@ -2066,7 +2066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpSound: {fileID: 8300000, guid: 6319912ea001ce81fb6c5d7ceff411e9, type: 3}
-  sideSpeed: 4
+  sideSpeed: 5
   jumpForce: 800
   platformsLayer:
     serializedVersion: 2
