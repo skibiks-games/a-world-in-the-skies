@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[SelectionBase]
 public class PlatformController : MonoBehaviour
 {
     [Tooltip("value 0 - 1")] [SerializeField] private float coinChance;

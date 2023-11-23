@@ -42,7 +42,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.layer == Mathf.Log(platformsLayer.value, 2)) {
-            Debug.Log(_rb.velocity.y);
             if (_rb.velocity.y <= 0.1f)
                 Jump();
         }
