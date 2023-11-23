@@ -4,20 +4,21 @@ public class PlayerMovement : MonoBehaviour
 {
     public static PlayerMovement Instance { get; private set; }
 
+    [SerializeField] AudioClip jumpSound;
     [SerializeField] private float sideSpeed;
     [SerializeField] private float jumpForce;
 
     [SerializeField] private LayerMask platformsLayer;
 
     private Rigidbody2D _rb;
-
+    private AudioSource _audioSource;
     private void Awake() {
         Instance = this;
     }
 
     private void Start() {
         Application.targetFrameRate = 60;
-
+        _audioSource = GetComponent<AudioSource>();
         _rb = GetComponent<Rigidbody2D>();
     }
 
@@ -34,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump() {
         _rb.velocity = Vector2.zero;
+        
+        _audioSource.PlayOneShot(jumpSound, 0.7F);
         _rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
