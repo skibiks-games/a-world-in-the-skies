@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
     private void Jump() {
         _rb.velocity = Vector2.zero;
         
-        _audioSource.PlayOneShot(jumpSound, 0.7F);
+        _audioSource.PlayOneShot(jumpSound, 0.1f);
         _rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 
