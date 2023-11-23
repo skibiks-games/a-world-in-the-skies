@@ -12,7 +12,7 @@ public class ScoreCounter : MonoBehaviour
         score = 0;
     }
 
-    private void OnCollisionEnter(Collision collision) {
+    private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.gameObject.layer == Mathf.Log(coinsLayer.value, 2)) {
             score++;
             Destroy(collision.gameObject);
